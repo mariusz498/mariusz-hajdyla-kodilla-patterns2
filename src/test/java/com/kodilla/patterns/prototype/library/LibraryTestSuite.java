@@ -22,7 +22,6 @@ public class LibraryTestSuite {
         Library libraryDeepClone = library.deepCopy();
         libraryDeepClone.setName("library deep copy");
         library.addBook("Third title", "Third author", LocalDate.now());
-        libraryDeepClone.getBooks().clear();
         libraryDeepClone.addBook("New title", "New author", LocalDate.now());
         Set<Book> firstBooks = library.getBooks();
         Set<Book> secondBooks = libraryClone.getBooks();
@@ -37,6 +36,6 @@ public class LibraryTestSuite {
         libraryDeepClone.getBooks().stream().forEach(book -> System.out.println(book.toString()));
         Assert.assertEquals(3, firstBooks.size());
         Assert.assertEquals(3, secondBooks.size());
-        Assert.assertEquals(1, thirdBooks.size());
+        Assert.assertEquals(3, thirdBooks.size());
     }
 }
