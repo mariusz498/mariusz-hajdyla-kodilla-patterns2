@@ -1,11 +1,8 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class TaskFactory {
-    public static final String DRIVING_TASK = "DRIVING_TASK";
-    public static final String PAINTING_TASK = "PAINTING_TASK";
-    public static final String SHOPPING_TASK = "SHOPPING_TASK";
 
-    public final Task createTask(final String taskType) {
+    public final Task createTask(TaskTypes taskType) {
         switch (taskType) {
             case DRIVING_TASK:
                DrivingTask drivingTask = new DrivingTask("Taxi driver", "Krakow", "a car");
